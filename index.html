@@ -17,7 +17,7 @@
         body {
             font-family: 'Montserrat', sans-serif;
             font-weight: 400;
-            color: #2D2D2D;
+            color: #1A1A1A;
             padding: 40px 20px;
             line-height: 1.7;
             font-size: 16px;
@@ -69,13 +69,11 @@
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+            background: #ffffff;
             border-radius: 40px;
             padding: 40px 35px;
-            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             position: relative;
             z-index: 2;
         }
@@ -177,7 +175,7 @@
 
         .subtitle { 
             font-size: 19px; 
-            color: #4A4A4A; 
+            color: #3A3A3A; 
             font-weight: 300; 
             letter-spacing: 0.5px; 
             margin-top: 5px; 
@@ -192,21 +190,60 @@
         }
 
         .nav-links { display: flex; gap: 15px; margin-bottom: 40px; justify-content: center; flex-wrap: wrap; }
-        .nav-link { color: #4A4A4A; text-decoration: none; font-weight: 400; font-size: 15px; padding: 6px 16px; border-radius: 30px; transition: all 0.3s ease; border: 1px solid transparent; }
+        .nav-link { color: #3A3A3A; text-decoration: none; font-weight: 400; font-size: 15px; padding: 6px 16px; border-radius: 30px; transition: all 0.3s ease; border: 1px solid transparent; }
         .nav-link:hover { color: #1A1A3E; border-color: #D4AF37; background: rgba(255, 255, 255, 0.4); }
 
-        .about-block { display: flex; gap: 40px; align-items: center; margin-bottom: 40px; background: rgba(255, 255, 255, 0.5); border-radius: 24px; padding: 30px 35px; border: 1px solid rgba(255, 255, 255, 0.6); }
-        .about-block img { width: 400px; height: 400px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid rgba(255, 255, 255, 0.5); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .about-text p { font-size: 16px; color: #2D2D2D; line-height: 1.9; margin-bottom: 14px; }
-        .about-text .gold { color: #D4AF37; font-weight: 500; }
-        .about-text strong { color: #1A1A3E; font-weight: 600; }
+        /* ИЗМЕНЕНИЯ: теперь "Обо мне" выглядит как карточки услуг */
+        .about-block { 
+            display: flex; 
+            gap: 40px; 
+            align-items: center; 
+            margin-bottom: 40px; 
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 24px; 
+            padding: 30px 35px; 
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+            transition: 0.3s;
+        }
+        .about-block:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            background: rgba(255, 255, 255, 0.95);
+            border-color: #D4AF37;
+        }
+        .about-block img { 
+            width: 400px; 
+            height: 400px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            flex-shrink: 0; 
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.04);
+        }
+        .about-text p { 
+            font-size: 16px; 
+            color: #1A1A1A; 
+            line-height: 1.9; 
+            margin-bottom: 14px; 
+        }
+        .about-text .gold { 
+            color: #D4AF37; 
+            font-weight: 500; 
+        }
+        .about-text strong { 
+            color: #1A1A3E; 
+            font-weight: 600; 
+        }
 
         h2 { font-family: 'Playfair Display', serif; font-size: 34px; font-weight: 400; color: #1A1A3E; margin-bottom: 30px; letter-spacing: 0.5px; text-align: center; }
 
         .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin: 30px 0 20px 0; }
 
         .service-card {
-            background: rgba(255, 255, 255, 0.75);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
             padding: 30px 30px;
             border-radius: 24px;
@@ -214,15 +251,7 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
             display: flex; flex-direction: column;
             transition: 0.3s;
-            opacity: 0; transform: translateY(20px);
-            animation: fadeUp 0.8s ease forwards;
         }
-        .service-card:nth-child(1) { animation-delay: 0.1s; }
-        .service-card:nth-child(2) { animation-delay: 0.2s; }
-        .service-card:nth-child(3) { animation-delay: 0.3s; }
-        .service-card:nth-child(4) { animation-delay: 0.4s; }
-        .service-card:nth-child(5) { animation-delay: 0.5s; }
-        @keyframes fadeUp { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
 
         .service-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08); background: rgba(255, 255, 255, 0.95); border-color: #D4AF37; }
 
@@ -261,17 +290,17 @@
         }
         .meta-text {
             font-size: 14px;
-            color: #4A4A4A;
+            color: #2D2D2D;
             font-weight: 400;
         }
 
-        .service-card ul { padding-left: 0; margin: 15px 0 0 0; font-size: 15px; color: #4A4A4A; list-style: none; flex: 1; line-height: 1.9; }
+        .service-card ul { padding-left: 0; margin: 15px 0 0 0; font-size: 15px; color: #2D2D2D; list-style: none; flex: 1; line-height: 1.9; }
         .service-card ul li { margin-bottom: 12px; padding-left: 20px; position: relative; }
         .service-card ul li::before { content: '—'; color: #D4AF37; position: absolute; left: 0; top: 0; }
 
         .service-card .info-line {
             margin-top: 15px; padding: 10px 14px; background: rgba(165, 155, 143, 0.1);
-            border-radius: 12px; color: #4A4A4A; font-size: 14px; font-weight: 400;
+            border-radius: 12px; color: #2D2D2D; font-size: 14px; font-weight: 400;
             border-left: 2px solid #D4AF37;
         }
         .service-card .info-line strong { color: #1A1A3E; font-weight: 600; }
@@ -294,7 +323,6 @@
         .carousel-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(26,26,62,0.15); cursor: pointer; transition: 0.3s; padding: 0; }
         .carousel-dot.active { background: #D4AF37; }
 
-        /* ===== БЛОК «КАК ПОПАСТЬ» С ЛУНОЙ (ваш оригинал) ===== */
         .how-to-detailed {
             background-image: url('moon-bg.jpg');
             background-size: cover;
@@ -307,17 +335,14 @@
             position: relative;
         }
 
-        .how-to-detailed::before {
-            display: none;
-        }
+        .how-to-detailed::before { display: none; }
 
         .how-to-detailed h2 { font-size: 28px; margin-bottom: 25px; text-align: left; color: #1A1A3E; text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
         .how-to-detailed ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .how-to-detailed ul li { display: flex; align-items: flex-start; gap: 15px; font-size: 15px; color: #2D2D2D; padding: 15px 20px; background: rgba(255, 255, 255, 0.7); border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.4); transition: 0.3s; line-height: 1.6; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .how-to-detailed ul li { display: flex; align-items: flex-start; gap: 15px; font-size: 15px; color: #1A1A1A; padding: 15px 20px; background: rgba(255, 255, 255, 0.7); border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.4); transition: 0.3s; line-height: 1.6; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
         .how-to-detailed ul li:hover { background: rgba(255, 255, 255, 0.9); border-color: #D4AF37; }
         .how-to-detailed ul li .num { color: #D4AF37; font-weight: 400; font-size: 20px; min-width: 35px; flex-shrink: 0; }
 
-        /* ===== КНОПКИ (ваши оригинальные) ===== */
         .cta-buttons { display: flex; justify-content: center; margin-top: 40px; }
         .button-group { display: flex; flex-direction: column; align-items: center; gap: 15px; width: 100%; max-width: 400px; margin: 0 auto; }
         .btn {
@@ -357,7 +382,6 @@
         .btn-up:hover { background: #ffffff; transform: translateY(-3px); }
         .btn-up.show { display: flex; }
 
-        /* ===== МОБИЛЬНАЯ АДАПТАЦИЯ (только для лёгкого чтения карточек) ===== */
         @media (max-width: 850px) {
             .about-block { flex-direction: column; text-align: center; }
             .about-block img { width: 300px; height: 300px; }
@@ -379,11 +403,8 @@
             .school { font-size: 13px; }
             .about-block { padding: 20px 15px; }
             .about-block img { width: 220px; height: 220px; }
-            
-            /* ===== УЛУЧШЕНИЕ ЧИТАЕМОСТИ В КАРТОЧКАХ НА МОБИЛЬНОМ ===== */
             .service-card { padding: 22px 20px; }
             .service-card ul { font-size: 14px; line-height: 2; }
-            
             .price-tag span { font-size: 20px; }
             .how-to-detailed { padding: 25px 20px; }
             .how-to-detailed ul { grid-template-columns: 1fr; }
@@ -409,8 +430,7 @@
     </style>
 </head>
 <body>
-
-    <video autoplay muted loop playsinline id="bg-video">
+    <video autoplay muted loop playsinline id="bg-video" preload="metadata">
         <source src="video.mp4" type="video/mp4">
     </video>
 
@@ -420,7 +440,6 @@
 
     <div class="container">
         <div class="header-wrapper">
-            <!-- ===== ЗОЛОТОЙ КРУГ СО ЗВЕЗДОЙ (ЛОГОТИП) ===== -->
             <div class="logo-container">
                 <div class="golden-star-logo">
                     <div class="outer-ring"></div>
@@ -428,7 +447,6 @@
                     <div class="star-top"></div>
                 </div>
             </div>
-            
             <div class="header-content">
                 <h1 class="header-title">Астролог-консультант</h1>
                 <p class="subtitle">Помогу обрести ясность в жизненной ситуации</p>
@@ -458,7 +476,6 @@
         <h2 id="services">Мои услуги</h2>
 
         <div class="services-grid">
-            <!-- Взрослая консультация -->
             <div class="service-card">
                 <h3>Взрослая консультация</h3>
                 <div class="service-meta">
@@ -482,7 +499,6 @@
                 </div>
             </div>
 
-            <!-- Совместимость -->
             <div class="service-card">
                 <h3>Совместимость</h3>
                 <div class="service-meta">
@@ -506,7 +522,6 @@
                 </div>
             </div>
 
-            <!-- Детская консультация -->
             <div class="service-card">
                 <h3>Детская консультация</h3>
                 <div class="service-meta">
@@ -530,7 +545,6 @@
                 </div>
             </div>
 
-            <!-- Годовой прогноз -->
             <div class="service-card">
                 <h3>Годовой прогноз</h3>
                 <div class="service-meta">
@@ -555,7 +569,6 @@
                 </div>
             </div>
 
-            <!-- Хорарные вопросы -->
             <div class="service-card">
                 <h3>Хорарные вопросы</h3>
                 <div class="service-meta">
